@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "date": "2026-10-23",
+    "city": "Santa Rosa de Viterbo - SP",
+    "venue": "Sexta Sertaneja — Quintal do Patrão",
+    "time": "20h30",
+    "notes": "Av. Presidente Vargas, 672. Amstel 600 ml: R$ 10 até as 21h."
+  },
+  {
+    "date": "2026-10-24",
+    "city": "Casa Branca - SP",
+    "venue": "Sábado Sertanejo — Buteco do Mandy",
+    "notes": "Evento a partir das 20h (horário do show não informado). Rua José Beni, 223."
+  }
+]
