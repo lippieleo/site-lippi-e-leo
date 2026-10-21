@@ -142,3 +142,21 @@ content:
       - name: description
         label: Descrição
         type: text
+
+  - name: equipe
+    label: Equipe da Banda
+    type: file
+    path: settings/equipe.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Nome do integrante
+        type: string
+        required: true
+      - name: role
+        label: Função na banda
+        type: string
+      - name: notes
+        label: Observações sem dados pessoais
+        type: text
