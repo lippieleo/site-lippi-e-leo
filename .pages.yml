@@ -104,3 +104,41 @@ content:
         label: Arquivo MP3
         type: file
         required: true
+
+  - name: catalogo_videos
+    label: Gerenciar vídeos
+    type: file
+    path: settings/videos.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Título do vídeo
+        type: string
+        required: true
+      - name: category
+        label: Categoria
+        type: select
+        required: true
+        options:
+          values:
+            - value: dvd
+              label: DVD
+            - value: prefeitura
+              label: Shows Prefeitura
+            - value: corporativo
+              label: Corporativo
+            - value: casamentos
+              label: Casamentos
+      - name: video
+        label: Arquivo de vídeo MP4 (opcional)
+        type: file
+      - name: youtube
+        label: Link do YouTube (opcional)
+        type: string
+      - name: cover
+        label: Capa do vídeo (opcional)
+        type: image
+      - name: description
+        label: Descrição
+        type: text
