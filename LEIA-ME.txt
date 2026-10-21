@@ -1,0 +1,6 @@
+LIPPI & LÉO — atualização de vídeos e Casamentos
+
+Esta pasta contém TODOS os vídeos das categorias DVD, Prefeitura, Corporativo e Casamentos, mais as capas e index.html.
+Para testar: EXTRAIA O ZIP INTEIRO, mantendo as pastas videos e capas. Abra index.html na pasta extraída. Não abra o HTML dentro do ZIP.
+O clipe Coração Quebrado abre o YouTube e exige conexão com a internet.
+Não publique antes de testar. Os vídeos maiores que 100 MB podem exigir Git LFS ou hospedagem de vídeo externa no GitHub.
