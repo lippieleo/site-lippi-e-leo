@@ -177,7 +177,7 @@ footer.footer-oficial .footer-rights {text-align:center !important; width:100% !
 document.addEventListener('DOMContentLoaded',async()=>{
  const audio=document.getElementById('audio'),list=document.getElementById('llTracks'),now=document.getElementById('llNow'),status=document.getElementById('llStatus'),play=document.getElementById('llPlay');
  if(!audio)return;
- let tracks=[],index=-1;
+ let tracks=[{title:'Coração Quebrado',artist:'Lippi & Léo',url:new URL('/coracao-quebrado.mp3',location.origin).href}],index=0;
  const urlOf=value=>{if(typeof value!=='string'||!value.trim()||/^(javascript:|data:|\/\/)/i.test(value.trim()))return null;try{const url=new URL(value.trim(),location.origin);return url.origin===location.origin?url.href:null}catch{return null}};
  const render=()=>{list.replaceChildren();tracks.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.className='ll-track'+(i===index?' active':'');const label=document.createElement('span');label.textContent=(i+1)+'. '+t.title;const artist=document.createElement('small');artist.textContent=t.artist||'Lippi & Léo';label.append(artist);b.append(label);b.onclick=()=>select(i,true);list.append(b)})};
  function select(i,start){if(!tracks.length)return;index=(i+tracks.length)%tracks.length;audio.src=tracks[index].url;now.textContent=tracks[index].title;const miniTitle=document.getElementById('miniTitle');if(miniTitle)miniTitle.textContent=tracks[index].title;const chooser=document.getElementById('miniTracks');if(chooser)chooser.value=String(index);render();if(start)audio.play().catch(()=>{status.textContent='Toque em Play para ouvir.'})}
@@ -186,9 +186,29 @@ document.addEventListener('DOMContentLoaded',async()=>{
  play.onclick=()=>{if(index<0&&tracks.length)select(0,false);if(audio.paused)audio.play().catch(()=>{status.textContent='Não foi possível iniciar o áudio.'});else audio.pause()};
  audio.onplay=()=>{play.textContent='⏸';status.textContent='Tocando agora'};
  audio.onpause=()=>{play.textContent='▶';status.textContent='Pausado'};
- audio.onended=()=>select(index+1,true);
+ audio.onended=()=>{if(tracks.length>1)select(index+1,true);};
  audio.onerror=()=>{status.textContent='Não foi possível carregar esta música.'};
- try{const response=await fetch('/settings/music.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP');const data=await response.json();tracks=(Array.isArray(data)?data:[]).filter(x=>x&&typeof x.title==='string'&&urlOf(x.file)).map(x=>({title:x.title,artist:x.artist,url:urlOf(x.file)}));if(tracks.length){select(0,false);status.textContent='Pronto para ouvir';document.getElementById('miniPrev').hidden=false;document.getElementById('miniNext').hidden=false;document.getElementById('miniTracks').hidden=false;window.llPlaylist={next:()=>select(index+1,true),prev:()=>select(index-1,true),select:(i)=>select(i,true)};const chooser=document.getElementById('miniTracks');chooser.replaceChildren();tracks.forEach((t,i)=>{const opt=document.createElement('option');opt.value=String(i);opt.textContent=t.title;chooser.append(opt)});chooser.value='0'}else{now.textContent='Novas músicas em breve';status.textContent='Playlist ainda sem arquivos MP3'}}catch{status.textContent='Playlist temporariamente indisponível'}
+
+ const miniPrev=document.getElementById('miniPrev'),miniNext=document.getElementById('miniNext'),chooser=document.getElementById('miniTracks');
+ miniPrev.hidden=false;miniNext.hidden=false;chooser.hidden=false;
+ miniPrev.onclick=()=>select(index-1,true);miniNext.onclick=()=>select(index+1,true);
+ chooser.onchange=()=>select(Number(chooser.value),true);
+ function showTracks(){
+  chooser.replaceChildren();
+  tracks.forEach((t,i)=>{const opt=document.createElement('option');opt.value=String(i);opt.textContent=t.title;chooser.append(opt)});
+  chooser.value=String(index);render();
+ }
+ window.llPlaylist={next:()=>select(index+1,true),prev:()=>select(index-1,true),select:i=>select(i,true)};
+ showTracks();
+ try{
+  const response=await fetch('/settings/music.json',{cache:'no-store'});
+  if(!response.ok)throw Error('HTTP');
+  const data=await response.json();
+  const extra=(Array.isArray(data)?data:[]).filter(x=>x&&typeof x.title==='string'&&urlOf(x.file)).map(x=>({title:x.title,artist:x.artist,url:urlOf(x.file)}));
+  tracks=[tracks[0],...extra.filter(x=>x.url!==tracks[0].url)];
+  showTracks();
+  status.textContent=tracks.length>1?'Playlist pronta':'Coração Quebrado';
+ }catch{status.textContent='Coração Quebrado';}
 });
 </script>
 <div class="wrap" style="margin-top:20px;margin-bottom:20px"><div style="background:#19191c;border:1px solid #62313a;border-radius:12px;padding:16px 20px"><strong style="color:#fff">📅 Agenda Lippi &amp; Léo no celular</strong><p style="margin:8px 0;color:#ddd;font-size:14px">Assine uma vez para acompanhar os shows no Android ou iPhone. A atualização depende do aplicativo de calendário.</p><a href="webcal://www.lippieleo.com.br/agenda/lippi-leo.ics" style="display:inline-block;background:#d51d35;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px">Adicionar agenda ao celular</a><p style="font-size:12px;color:#aaa;margin:8px 0 0">No Google Agenda, use “Adicionar agenda por URL” com: https://www.lippieleo.com.br/agenda/lippi-leo.ics</p></div></div>
