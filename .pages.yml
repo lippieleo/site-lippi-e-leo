@@ -85,3 +85,22 @@ content:
         label: Foto de fundo - Contato
         type: image
         required: false
+
+  - name: musicas
+    label: Playlist de músicas
+    type: file
+    path: settings/music.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Nome da música
+        type: string
+        required: true
+      - name: artist
+        label: Artista
+        type: string
+      - name: file
+        label: Arquivo MP3
+        type: file
+        required: true
