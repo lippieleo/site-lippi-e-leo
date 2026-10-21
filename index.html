@@ -451,4 +451,42 @@ document.addEventListener('DOMContentLoaded',async()=>{
  }catch(e){/* Em caso de falha, preservar os fundos originais. */}
 });
 </script>
+<script>
+/* Vídeos adicionais cadastrados no Pages CMS; vídeos originais preservados. */
+document.addEventListener('DOMContentLoaded',async()=>{
+ const categories=new Set(['dvd','prefeitura','corporativo','casamentos']);
+ try{
+  const response=await fetch('/settings/videos.json',{cache:'no-store'});
+  if(!response.ok)return;
+  const items=await response.json();
+  if(!Array.isArray(items))return;
+  const safeUrl=(value)=>{
+   if(typeof value!=='string'||!value.trim())return null;
+   try{const u=new URL(value.trim(),location.origin);return (u.protocol==='https:'||u.protocol==='http:')?u.href:null}catch{return null}
+  };
+  for(const item of items){
+   if(!item||!categories.has(item.category)||typeof item.title!=='string'||!item.title.trim())continue;
+   const panel=document.querySelector('.video-category[data-panel="'+item.category+'"] .dvd-layout');
+   if(!panel)continue;
+   const article=document.createElement('article');article.className='dvd-film';
+   const frame=document.createElement('div');frame.className='dvd-video';
+   const mp4=safeUrl(item.video),youtube=safeUrl(item.youtube),cover=safeUrl(item.cover);
+   if(youtube){
+    const a=document.createElement('a');a.href=youtube;a.target='_blank';a.rel='noopener noreferrer';a.className='coracao-youtube-link';
+    if(cover){const img=document.createElement('img');img.src=cover;img.loading='lazy';img.alt='Capa de '+item.title;a.appendChild(img)}
+    const play=document.createElement('span');play.className='coracao-play';play.textContent='▶';a.appendChild(play);frame.appendChild(a);
+   }else if(mp4){
+    const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='metadata';video.src=mp4;
+    video.style.cssText='width:100%;background:#111';if(cover)video.poster=cover;frame.appendChild(video);
+   }else continue;
+   const info=document.createElement('div');info.className='dvd-info';
+   const label=document.createElement('span');label.textContent={dvd:'DVD',prefeitura:'SHOWS PREFEITURA',corporativo:'CORPORATIVO',casamentos:'CASAMENTOS'}[item.category]+' • LIPPI & LÉO';
+   const title=document.createElement('h3');title.textContent=item.title;
+   info.append(label,title);
+   if(typeof item.description==='string'&&item.description.trim()){const p=document.createElement('p');p.textContent=item.description;info.appendChild(p)}
+   article.append(frame,info);panel.appendChild(article);
+  }
+ }catch(e){/* Manter vídeos existentes caso o catálogo não carregue. */}
+});
+</script>
 </body></html>
