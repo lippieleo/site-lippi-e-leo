@@ -35,7 +35,7 @@ content:
         label: Link dos ingressos (opcional)
         type: string
   - name: inicio
-    label: Foto da página inicial
+    label: Foto e vídeo da página inicial
     type: file
     path: settings/home.json
     format: json
@@ -43,4 +43,18 @@ content:
       - name: photo
         label: Foto principal
         type: image
+        required: false
+      - name: video
+        label: Vídeo de fundo (MP4)
+        type: file
+        required: false
+      - name: mode
+        label: Exibir na abertura
+        type: select
+        options:
+          values:
+            - value: photo
+              label: Foto
+            - value: video
+              label: Vídeo
         required: false
