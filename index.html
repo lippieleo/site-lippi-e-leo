@@ -555,7 +555,7 @@ document.getElementById('closeMusicPlayer')?.addEventListener('click',()=>{
  const player=document.getElementById('stickyMusicPlayer');
  const music=document.getElementById('audio');
  if(music)music.pause();
- if(player)player.hidden=true;
+ if(player){player.hidden=true;player.style.setProperty('display','none','important');}
 });
 </script>
 </body></html>
