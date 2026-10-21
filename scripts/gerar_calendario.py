@@ -12,7 +12,7 @@ tz = ZoneInfo("America/Sao_Paulo")
 def esc(s):
     return str(s or "").replace("\\","\\\\").replace("\n","\\n").replace(",","\\,").replace(";","\\;")
 def time_of(s):
-    match = re.search(r"(?<!\\d)([01]?\\d|2[0-3])\\s*(?:[:hH]\\s*([0-5]?\\d))?",str(s or ""))
+    match = re.search(r"(?<!\d)([01]?\d|2[0-3])\s*(?:[:hH]\s*([0-5]?\d))?",str(s or ""))
     return (int(match.group(1)),int(match.group(2) or 0)) if match else None
 def fold(s):
     parts=[]
