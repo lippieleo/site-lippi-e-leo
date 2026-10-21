@@ -75,9 +75,9 @@ linear-gradient(180deg,rgba(0,0,0,.25),transparent 24%,transparent 62%,rgba(0,0,
 #agenda .agenda-content{position:relative;z-index:1;padding-top:0;padding-bottom:130px;transform:translateY(-80px)}
 .shows-grid{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin:24px 0;text-align:left}
 .show-card{box-sizing:border-box;width:min(100%,370px);display:grid;grid-template-columns:78px minmax(0,1fr);column-gap:13px;align-items:center;background:rgba(8,8,10,.82);border:1px solid rgba(255,255,255,.16);border-left:2px solid #e7192a;border-radius:8px;padding:11px 14px;backdrop-filter:blur(6px)}
-.show-date{grid-row:1/3;font-size:1.02rem;font-weight:800;color:#fff;white-space:nowrap}
+.show-date{grid-row:1/4;font-size:1.02rem;font-weight:800;color:#fff;white-space:nowrap}
 .show-city{grid-column:2;font-size:.92rem;color:#ff4052;font-weight:750;margin:0;line-height:1.25}
-.show-venue{display:none}
+.show-venue{grid-column:2;font-size:.82rem;color:#f0f0f0;margin:3px 0 0;line-height:1.2}
 .show-extra{grid-column:2;font-size:.79rem;color:#ddd;margin:3px 0 0;line-height:1.2}
 .show-empty{grid-column:1/-1;background:rgba(0,0,0,.65);padding:32px;border-radius:12px;text-align:center;color:#eee;border:1px solid #4b252a}
 .agenda-tools{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:24px}.agenda-note{color:#bdbdbd;font-size:.85rem}
@@ -245,7 +245,7 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
    if(!shows.length){list.append(make('div','show-empty','Novas datas serao anunciadas em breve.'));return}
    shows.forEach(x=>{
     const card=make('article','show-card');
-    card.append(make('div','show-date',formatDate(x.date)),make('div','show-city',x.city));
+    card.append(make('div','show-date',formatDate(x.date)),make('div','show-city',x.city),make('div','show-venue',x.venue));
     if(x.time)card.append(make('div','show-extra',x.time));
     
     if(typeof x.tickets==='string'&&/^https:\/\//i.test(x.tickets)){
