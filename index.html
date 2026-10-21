@@ -219,24 +219,40 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
 
 </script><script>
 (()=>{
- const KEY='lippi_leo_agenda_v1';let shows=[];
- const by=id=>document.getElementById(id),list=by('showList'),editList=by('agendaEditList'),panel=by('agendaAdmin'),feedback=by('agendaFeedback');
- try{const value=JSON.parse(localStorage.getItem(KEY)||'[]');if(Array.isArray(value))shows=value.filter(valid)}catch(e){}
- function valid(x){return x&&typeof x==='object'&&/^\d{4}-\d{2}-\d{2}$/.test(x.date||'')&&typeof x.city==='string'&&typeof x.venue==='string'}
- function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
- function dateBR(d){const [y,m,day]=d.split('-');return `${day}/${m}/${y}`}
- function persist(){try{localStorage.setItem(KEY,JSON.stringify(shows));feedback.textContent='Agenda salva neste navegador.'}catch(e){feedback.textContent='Não foi possível salvar neste navegador. Use Exportar agenda.'}render()}
- function render(){list.replaceChildren();editList.replaceChildren();
-  if(!shows.length)list.append(el('div','show-empty','Novas datas serão anunciadas em breve.'));
-  shows.slice().sort((a,b)=>a.date.localeCompare(b.date)).forEach(x=>{const c=el('article','show-card');c.append(el('div','show-date',dateBR(x.date)),el('div','show-city',x.city),el('div','show-venue',x.venue));if(x.time)c.append(el('div','show-extra','Horário: '+x.time));if(x.notes)c.append(el('div','show-extra',x.notes));list.append(c)});
-  shows.forEach((x,i)=>{const row=el('div','agenda-edit-row');row.append(el('span','',dateBR(x.date)+' — '+x.city+' — '+x.venue));const controls=el('div');const edit=el('button','','Editar'),del=el('button','','Excluir');edit.type=del.type='button';edit.onclick=()=>{by('showEditIndex').value=i;by('showDate').value=x.date;by('showCity').value=x.city;by('showVenue').value=x.venue;by('showTime').value=x.time||'';by('showNotes').value=x.notes||'';by('showForm').scrollIntoView({behavior:'smooth',block:'center'})};del.onclick=()=>{if(confirm('Excluir este show da agenda?')){shows.splice(i,1);persist()}};controls.append(edit,del);row.append(controls);editList.append(row)})
+ const list=document.getElementById('showList');
+ if(!list)return;
+ const make=(tag,cls,value)=>{const el=document.createElement(tag);el.className=cls;if(value!==undefined)el.textContent=value;return el};
+ const formatDate=date=>{const [year,month,day]=date.split('-');return day+'/'+month+'/'+year};
+ const valid=x=>x&&typeof x==='object'&&/^\d{4}-\d{2}-\d{2}$/.test(x.date||'')&&typeof x.city==='string'&&typeof x.venue==='string';
+ // O cadastro agora e publicado pelo repositorio; nao pelo armazenamento local do visitante.
+ const oldToggle=document.getElementById('agendaAdminToggle');
+ const oldPanel=document.getElementById('agendaAdmin');
+ const oldTools=oldToggle?.closest('.agenda-tools');
+ if(oldTools)oldTools.hidden=true;
+ if(oldToggle)oldToggle.hidden=true;
+ if(oldPanel)oldPanel.hidden=true;
+ async function load(){
+  try{
+   const response=await fetch('/agenda/shows.json',{cache:'no-store'});
+   if(!response.ok)throw new Error('HTTP '+response.status);
+   const data=await response.json();
+   if(!Array.isArray(data))throw new Error('Formato invalido');
+   const shows=data.filter(valid).sort((a,b)=>a.date.localeCompare(b.date));
+   list.replaceChildren();
+   if(!shows.length){list.append(make('div','show-empty','Novas datas serao anunciadas em breve.'));return}
+   shows.forEach(x=>{
+    const card=make('article','show-card');
+    card.append(make('div','show-date',formatDate(x.date)),make('div','show-city',x.city),make('div','show-venue',x.venue));
+    if(x.time)card.append(make('div','show-extra','Horario: '+x.time));
+    if(x.notes)card.append(make('div','show-extra',x.notes));
+    if(typeof x.tickets==='string'&&/^https:\/\//i.test(x.tickets)){
+     const link=make('a','btn','Ingressos');link.href=x.tickets;link.target='_blank';link.rel='noopener noreferrer';link.style.marginTop='16px';card.append(link);
+    }
+    list.append(card);
+   });
+  }catch(err){list.replaceChildren(make('div','show-empty','Agenda temporariamente indisponivel. Tente novamente mais tarde.'))}
  }
- by('agendaAdminToggle').onclick=()=>{panel.hidden=!panel.hidden;by('agendaAdminToggle').setAttribute('aria-expanded',String(!panel.hidden))};
- by('showForm').onsubmit=e=>{e.preventDefault();const x={date:by('showDate').value,city:by('showCity').value.trim(),venue:by('showVenue').value.trim(),time:by('showTime').value,notes:by('showNotes').value.trim()};if(!valid(x)||!x.city||!x.venue)return;const i=by('showEditIndex').value;if(i==='')shows.push(x);else shows[Number(i)]=x;by('showForm').reset();by('showEditIndex').value='';persist()};
- by('cancelShowEdit').onclick=()=>{by('showForm').reset();by('showEditIndex').value=''};
- by('exportAgenda').onclick=()=>{const blob=new Blob([JSON.stringify(shows,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='agenda-lippi-leo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
- by('importAgenda').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const v=JSON.parse(await f.text());if(!Array.isArray(v)||!v.every(valid)||v.length>500)throw Error();if(confirm('Substituir a agenda atual pelos shows importados?')){shows=v.map(x=>({date:x.date,city:x.city.slice(0,100),venue:x.venue.slice(0,120),time:typeof x.time==='string'?x.time.slice(0,5):'',notes:typeof x.notes==='string'?x.notes.slice(0,180):''}));persist()}}catch(err){feedback.textContent='Arquivo inválido. Importe um JSON exportado pelo painel.'}e.target.value=''};
- render();
+ load();
 })();
 </script>
 <script>(()=>{
