@@ -58,3 +58,30 @@ content:
             - value: video
               label: Vídeo
         required: false
+
+  - name: fotos_secoes
+    label: Fotos das outras abas
+    type: file
+    path: settings/sections.json
+    format: json
+    fields:
+      - name: biografia
+        label: Foto de fundo - Biografia
+        type: image
+        required: false
+      - name: agenda
+        label: Foto de fundo - Agenda
+        type: image
+        required: false
+      - name: videos
+        label: Foto de fundo - Vídeos
+        type: image
+        required: false
+      - name: contrate
+        label: Foto de fundo - Contrate
+        type: image
+        required: false
+      - name: contato
+        label: Foto de fundo - Contato
+        type: image
+        required: false
