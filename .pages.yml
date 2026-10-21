@@ -1,0 +1,36 @@
+media:
+  input: media
+  output: /media
+content:
+  - name: agenda
+    label: Agenda de Shows
+    type: file
+    path: agenda/shows.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: date
+        label: Data do show
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: city
+        label: Cidade e estado
+        type: string
+        required: true
+      - name: venue
+        label: Local ou evento
+        type: string
+        required: true
+      - name: time
+        label: Horário (opcional)
+        type: string
+      - name: notes
+        label: Informações adicionais
+        type: text
+      - name: tickets
+        label: Link dos ingressos (opcional)
+        type: string
