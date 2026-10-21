@@ -535,4 +535,14 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.getElementById('miniTracks')?.addEventListener('change',e=>window.llPlaylist?.select(Number(e.target.value)));
 });
 </script>
+<style>
+/* Player flutuante menor em celular e computador. */
+.stickyplayer{min-height:36px!important;gap:5px!important;padding:4px 8px 4px 4px!important;max-width:min(92vw,340px)!important;bottom:10px}
+.stickyplayer button{flex:0 0 25px!important;width:25px!important;height:25px!important;font-size:10px!important}
+.stickyplayer #miniPlay{flex-basis:28px!important;width:28px!important;height:28px!important;font-size:12px!important}
+.stickyplayer>div{max-width:96px!important}
+.stickyplayer b{font-size:10px!important}.stickyplayer small{font-size:9px!important}
+.stickyplayer #miniTracks{max-width:80px!important;min-width:55px!important;font-size:10px!important;padding:3px 2px!important}
+@media(max-width:450px){.stickyplayer{left:7px!important;bottom:7px!important;max-width:calc(100vw - 14px)!important}}
+</style>
 </body></html>
