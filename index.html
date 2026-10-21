@@ -399,4 +399,30 @@ document.addEventListener('DOMContentLoaded',async()=>{
  }catch(e){/* Preserva a capa original em caso de falha. */}
 });
 </script>
+<script>
+/* Fotos de fundo das abas gerenciadas pelo Pages CMS. */
+document.addEventListener('DOMContentLoaded',async()=>{
+ try{
+  const response=await fetch('/settings/sections.json',{cache:'no-store'});
+  if(!response.ok)return;
+  const photos=await response.json();
+  const targets={biografia:'sobre',agenda:'agenda',videos:'videos',contrate:'contrate',contato:'contato'};
+  for(const [field,id] of Object.entries(targets)){
+   const raw=photos[field];
+   if(typeof raw!=='string'||!raw.trim()||/^(?:javascript:|data:|\/\/)/i.test(raw.trim()))continue;
+   const url=new URL(raw.trim(),location.origin);
+   if(url.origin!==location.origin)continue;
+   const section=document.getElementById(id);
+   if(!section)continue;
+   const img=new Image();
+   img.onload=()=>{
+    section.style.backgroundImage='linear-gradient(rgba(6,6,8,.78),rgba(6,6,8,.85)),url("'+url.href.replace(/"/g,'%22')+'")';
+    section.style.backgroundSize='cover';
+    section.style.backgroundPosition='center center';
+   };
+   img.src=url.href;
+  }
+ }catch(e){/* Em caso de falha, preservar os fundos originais. */}
+});
+</script>
 </body></html>
