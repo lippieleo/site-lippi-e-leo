@@ -67,13 +67,17 @@ content:
             - value: liberado
               label: Liberado
   - name: foto_agenda_online
-    label: 📸 Trocar foto da Agenda Online
+    label: 📸 Foto e fundo da Agenda Online
     type: file
     path: settings/agenda-online.json
     format: json
     fields:
       - name: photo
         label: Nova foto dos cantores (preferir PNG sem fundo)
+        type: image
+        required: false
+      - name: background
+        label: Novo fundo do site da agenda (palco ou cenário)
         type: image
         required: false
   - name: inicio
