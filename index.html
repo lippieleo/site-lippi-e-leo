@@ -569,4 +569,16 @@ document.getElementById('closeMusicPlayer')?.addEventListener('click',()=>{
 #stickyMusicPlayer select{max-width:96px;min-width:0;background:#211c20;color:#fff;border:1px solid #5d343a;border-radius:6px;font-size:10px;padding:5px 2px}
 @media(max-width:520px){#stickyMusicPlayer{left:8px;bottom:8px;gap:5px}#stickyMusicPlayer>div{max-width:85px}#stickyMusicPlayer select{max-width:74px}#stickyMusicPlayer button{width:27px;height:27px;font-size:12px}}
 </style>
+<style>
+/* Agenda compacta: mantém cores, layout e tamanho das letras. */
+#agenda .shows-grid{gap:4px;margin:18px 0}
+#agenda .show-card{padding:4px 10px;column-gap:11px;grid-template-columns:88px minmax(0,1fr);border-radius:8px}
+#agenda .show-date{padding-right:8px}
+#agenda .show-venue{margin-top:1px}
+#agenda .show-extra{margin-top:1px}
+@media(max-width:420px){
+ #agenda .show-card{grid-template-columns:80px minmax(0,1fr);column-gap:8px;padding:4px 8px}
+ #agenda .show-date{padding-right:6px}
+}
+</style>
 </body></html>
