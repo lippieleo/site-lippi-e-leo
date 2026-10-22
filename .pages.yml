@@ -66,6 +66,16 @@ content:
               label: Bloqueado
             - value: liberado
               label: Liberado
+  - name: foto_agenda_online
+    label: 📸 Trocar foto da Agenda Online
+    type: file
+    path: settings/agenda-online.json
+    format: json
+    fields:
+      - name: photo
+        label: Nova foto dos cantores (preferir PNG sem fundo)
+        type: image
+        required: false
   - name: inicio
     label: Foto e vídeo da página inicial
     type: file
