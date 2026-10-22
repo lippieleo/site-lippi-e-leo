@@ -1,34 +1,54 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Lippi e Leo//Shows//PT-BR
+PRODID:-//Lippi e Leo//Agenda de Shows//PT-BR
 CALSCALE:GREGORIAN
+METHOD:PUBLISH
 X-WR-CALNAME:Lippi & Léo - Shows
 X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:show-20261023-0@lippieleo.com.br
-DTSTAMP:20261021T210000Z
-DTSTART;TZID=America/Sao_Paulo:20261023T203000
-DTEND;TZID=America/Sao_Paulo:20261023T223000
+DTSTAMP:20261022T133259Z
+DTSTART;TZID=America/Sao_Paulo:20261023T020000
+DTEND;TZID=America/Sao_Paulo:20261023T040000
 SUMMARY:Lippi & Léo - Sexta Sertaneja — Quintal do Patrão
 LOCATION:Santa Rosa de Viterbo - SP
-DESCRIPTION:Horário: 20h30 | 
+DESCRIPTION:Horário informado: 20h30 |  | Veja: https://www.lippieleo.co
+ m.br/#agenda
+URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261024-1@lippieleo.com.br
-DTSTAMP:20261021T210000Z
-DTSTART;VALUE=DATE:20261024
-DTEND;VALUE=DATE:20261024
+DTSTAMP:20261022T133259Z
+DTSTART;TZID=America/Sao_Paulo:20261024T020000
+DTEND;TZID=America/Sao_Paulo:20261024T040000
 SUMMARY:Lippi & Léo - Sábado Sertanejo — Buteco do Mandy
 LOCATION:Casa Branca - SP
-DESCRIPTION:Horário: A partir das 20h | show Lippi e Léo
+DESCRIPTION:Horário informado: A partir das 20h | show Lippi e Léo | Ve
+ ja: https://www.lippieleo.com.br/#agenda
+URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261022-2@lippieleo.com.br
-DTSTAMP:20261021T210000Z
-DTSTART;TZID=America/Sao_Paulo:20261022T200000
-DTEND;TZID=America/Sao_Paulo:20261022T220000
+DTSTAMP:20261022T133259Z
+DTSTART;TZID=America/Sao_Paulo:20261022T020000
+DTEND;TZID=America/Sao_Paulo:20261022T040000
 SUMMARY:Lippi & Léo - Container
 LOCATION:Conchal\, SP
-DESCRIPTION:Horário: 20:00 horas | 
+DESCRIPTION:Horário informado: 20:00 horas |  | Veja: https://www.lippie
+ leo.com.br/#agenda
+URL:https://www.lippieleo.com.br/#agenda
+END:VEVENT
+BEGIN:VEVENT
+UID:show-20261212-3@lippieleo.com.br
+DTSTAMP:20261022T133259Z
+DTSTART;TZID=America/Sao_Paulo:20261212T140000
+DTEND;TZID=America/Sao_Paulo:20261212T160000
+SUMMARY:Lippi & Léo - EVENTO PRIVADO
+LOCATION:Conchal\, SP
+DESCRIPTION:Horário informado: 14:00 horas |  | Veja: https://www.lippie
+ leo.com.br/#agenda
+URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 END:VCALENDAR
