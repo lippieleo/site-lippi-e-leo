@@ -34,6 +34,38 @@ content:
       - name: tickets
         label: Link dos ingressos (opcional)
         type: string
+  - name: bloqueios
+    label: 🔒 Bloquear datas da agenda
+    type: file
+    path: agenda/bloqueios.json
+    format: json
+    list: true
+    fields:
+      - name: start
+        label: Data inicial do bloqueio
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: end
+        label: Data final do bloqueio (inclusive)
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: reason
+        label: Motivo (opcional, somente equipe)
+        type: string
+      - name: status
+        label: Situação
+        type: select
+        required: true
+        options:
+          values:
+            - value: bloqueado
+              label: Bloqueado
+            - value: liberado
+              label: Liberado
   - name: inicio
     label: Foto e vídeo da página inicial
     type: file
