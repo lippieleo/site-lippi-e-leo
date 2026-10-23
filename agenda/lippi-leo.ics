@@ -9,7 +9,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:show-20261023-0@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261023T020000
 DTEND;TZID=America/Sao_Paulo:20261023T040000
 SUMMARY:Lippi & Léo - Sexta Sertaneja — Quintal do Patrão
@@ -20,7 +20,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261024-1@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261024T020000
 DTEND;TZID=America/Sao_Paulo:20261024T040000
 SUMMARY:Lippi & Léo - Sábado Sertanejo — Buteco do Mandy
@@ -31,7 +31,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261022-2@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261022T020000
 DTEND;TZID=America/Sao_Paulo:20261022T040000
 SUMMARY:Lippi & Léo - Container
@@ -42,7 +42,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261212-3@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261212T140000
 DTEND;TZID=America/Sao_Paulo:20261212T160000
 SUMMARY:Lippi & Léo - EVENTO PRIVADO
@@ -53,7 +53,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261107-4@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261107T020000
 DTEND;TZID=America/Sao_Paulo:20261107T040000
 SUMMARY:Lippi & Léo - Arena Beach Bar
@@ -64,7 +64,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261114-5@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261114T140000
 DTEND;TZID=America/Sao_Paulo:20261114T160000
 SUMMARY:Lippi & Léo - Evento Privado
@@ -75,12 +75,23 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261113-6@lippieleo.com.br
-DTSTAMP:20261023T214646Z
+DTSTAMP:20261023T215820Z
 DTSTART;TZID=America/Sao_Paulo:20261113T193000
 DTEND;TZID=America/Sao_Paulo:20261113T213000
 SUMMARY:Lippi & Léo - Evento Privado
 LOCATION:Jacuí\, MG
 DESCRIPTION:Horário informado: 19:30h |  | Veja: https://www.lippieleo.c
+ om.br/#agenda
+URL:https://www.lippieleo.com.br/#agenda
+END:VEVENT
+BEGIN:VEVENT
+UID:show-20261115-7@lippieleo.com.br
+DTSTAMP:20261023T215820Z
+DTSTART;TZID=America/Sao_Paulo:20261115T160000
+DTEND;TZID=America/Sao_Paulo:20261115T180000
+SUMMARY:Lippi & Léo - Evento Privado 
+LOCATION:Casa Branca\, SP
+DESCRIPTION:Horário informado: 16:00h |  | Veja: https://www.lippieleo.c
  om.br/#agenda
 URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
