@@ -35,5 +35,11 @@
     "city": "Mococa SP",
     "venue": "Evento Privado",
     "time": "14h"
+  },
+  {
+    "date": "2026-11-13",
+    "city": "Jacuí, MG",
+    "venue": "Evento Privado",
+    "time": "19:30h"
   }
 ]
