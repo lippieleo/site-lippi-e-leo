@@ -310,8 +310,8 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     const todayKey=datePart('year')+'-'+datePart('month')+'-'+datePart('day');
     const currentMonth=todayKey.slice(0,7);
     list.replaceChildren();
-    // Cada show so aparece no proprio mes e nao aparece depois da data.
-    const selected=shows.filter(x=>x.date.slice(0,7)===currentMonth && x.date>=todayKey);
+    // Exibir todos os shows do mes corrente, inclusive datas ja passadas; trocar automaticamente na virada do mes.
+    const selected=shows.filter(x=>x.date.slice(0,7)===currentMonth);
     if(!selected.length){list.append(make('div','show-empty','Nenhum próximo show anunciado.'));return}
     selected.forEach(x=>{
     const card=make('article','show-card');
