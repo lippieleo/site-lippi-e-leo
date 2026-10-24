@@ -57,16 +57,9 @@
     "notes": "Show em casa branca fechado por 2000,00"
   },
   {
-    "date": "2026-11-28",
-    "city": "MOCOCA  - SP",
-    "venue": "EVENTO DE TESTE",
-    "time": "23:00",
-    "booking_id": "d6f6178c-fb3f-43ba-93ad-d834c71c088a"
-  },
-  {
     "date": "2026-12-12",
     "city": "Conchal, SP",
     "venue": "EVENTO PRIVADO",
     "time": "14:00 horas"
   }
-]
+]\n
