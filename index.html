@@ -302,7 +302,21 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
    if(!response.ok)throw new Error('HTTP '+response.status);
    const data=await response.json();
    if(!Array.isArray(data))throw new Error('Formato invalido');
-   const shows=data.filter(valid).sort((a,b)=>a.date.localeCompare(b.date));
+   let shows=data.filter(valid).sort((a,b)=>a.date.localeCompare(b.date));
+   // Sincroniza shows aprovados na agenda de reservas com o site oficial.
+   async function syncApproved(){
+    try{
+     const response=await fetch('https://zcfudytghjsosnpkmgzv.supabase.co/functions/v1/pre-reservas?action=approved',{cache:'no-store'});
+     if(!response.ok)throw Error('HTTP '+response.status);
+     const payload=await response.json();
+     if(!Array.isArray(payload.shows))return;
+     const base=data.filter(valid);
+     const approved=payload.shows.filter(valid);
+     const keys=new Set(base.map(x=>[x.date,x.time||'',x.city,x.venue].join('|').toLowerCase()));
+     shows=base.concat(approved.filter(x=>!keys.has([x.date,x.time||'',x.city,x.venue].join('|').toLowerCase()))).sort((a,b)=>a.date.localeCompare(b.date));
+     render();
+    }catch(err){console.warn('Sincronização de shows aprovados indisponível',err)}
+   }
    function render(){
     // Datas no fuso do Brasil, evitando virada antecipada de mes em outros fusos.
     const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
@@ -325,6 +339,8 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     });
    }
    render();
+   syncApproved();
+   setInterval(syncApproved,5*60*1000);
    setInterval(render,60000);
   }catch(err){list.replaceChildren(make('div','show-empty','Agenda temporariamente indisponivel. Tente novamente mais tarde.'))}
  }
