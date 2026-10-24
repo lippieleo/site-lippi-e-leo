@@ -459,6 +459,9 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
 </style>
 <script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.video-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.video-tab').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',String(b===btn))});document.querySelectorAll('.video-category').forEach(p=>{p.hidden=p.dataset.panel!==btn.dataset.category;if(p.hidden)p.querySelectorAll('video').forEach(v=>v.pause())})}));});</script>
 <script>
+/* Não exibir a capa antiga enquanto o vídeo principal carrega. */
+const heroPhoto=document.querySelector('#inicio .hero-photo-only img');
+if(heroPhoto)heroPhoto.style.visibility='hidden';
 /* Capa editável via Pages CMS: mantém foto original como fallback. */
 document.addEventListener('DOMContentLoaded',async()=>{
  const container=document.querySelector('#inicio .hero-photo-only');
@@ -472,19 +475,19 @@ document.addEventListener('DOMContentLoaded',async()=>{
   const resolve=(value)=>{const path=safePath(value);if(!path)return null;const u=new URL(path,location.origin);return u.origin===location.origin?u.href:null};
   const photoSrc=resolve(cfg.photo);
   if(photoSrc){const test=new Image();test.onload=()=>{photo.src=photoSrc};test.src=photoSrc}
-  if(cfg.mode!=='video')return;
+  if(cfg.mode!=='video'){photo.style.visibility='visible';return;}
   const videoSrc=resolve(cfg.video);
-  if(!videoSrc)return;
+  if(!videoSrc){photo.style.visibility='visible';return;}
   const video=document.createElement('video');
   video.autoplay=true;video.muted=true;video.loop=true;video.playsInline=true;
   video.setAttribute('aria-label','Vídeo de apresentação de Lippi e Léo');
   video.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:none';
   video.src=videoSrc;
   video.addEventListener('playing',()=>{video.style.display='block'});
-  video.addEventListener('error',()=>{video.style.display='none'});
+  video.addEventListener('error',()=>{video.style.display='none';photo.style.visibility='visible'});
   container.appendChild(video);
-  video.play().catch(()=>{video.style.display='none'});
- }catch(e){/* Preserva a capa original em caso de falha. */}
+  video.play().catch(()=>{video.style.display='none';photo.style.visibility='visible'});
+ }catch(e){photo.style.visibility='visible';/* Preserva a capa original em caso de falha. */}
 });
 </script>
 <script>
