@@ -636,4 +636,23 @@ ctx.putImageData(frame,0,0);img.src=c.toDataURL('image/png');
 }
 if(img.complete&&img.naturalWidth)limpar();else img.addEventListener('load',limpar,{once:true});
 })();
-</script></body></html>
+</script>
+<style id="footer-background-continuation">
+/* Continua o fundo do contato por baixo do rodape, sem mover seu conteudo. */
+#contato{overflow:visible}
+#contato .contato-foto-original,#contato::before{bottom:calc(-1 * var(--footer-background-height,0px))}
+footer.footer-oficial{position:relative;z-index:1;background:transparent!important}
+</style>
+<script>
+(()=>{
+ const contact=document.getElementById('contato');
+ const footer=document.querySelector('footer.footer-oficial');
+ if(!contact||!footer)return;
+ const sync=()=>contact.style.setProperty('--footer-background-height',footer.getBoundingClientRect().height+'px');
+ sync();
+ if(typeof ResizeObserver==='function')new ResizeObserver(sync).observe(footer);
+ else window.addEventListener('resize',sync);
+ window.addEventListener('load',sync,{once:true});
+})();
+</script>
+</body></html>
