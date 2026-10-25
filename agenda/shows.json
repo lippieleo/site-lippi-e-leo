@@ -57,15 +57,22 @@
     "notes": "Show em casa branca fechado por 2000,00"
   },
   {
+    "date": "2026-11-29",
+    "city": "Divinolândia, SP",
+    "venue": "Pesqueiro Recanto dos Lagos",
+    "time": "14:30h"
+  },
+  {
     "date": "2026-12-12",
     "city": "Conchal, SP",
     "venue": "EVENTO PRIVADO",
     "time": "14:00 horas"
   },
   {
-    "date": "2026-11-29",
-    "city": "Divinolândia, SP",
-    "venue": "Pesqueiro Recanto dos Lagos",
-    "time": "14:30h"
+    "date": "2027-02-20",
+    "city": "Casa Branca, SP",
+    "venue": "Evento Privado",
+    "time": "16:00",
+    "booking_id": "02692ca0-78d7-4422-b0a9-a6f73bda00f5"
   }
 ]
