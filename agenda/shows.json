@@ -72,7 +72,13 @@
     "date": "2027-02-20",
     "city": "Casa Branca, SP",
     "venue": "Evento Privado",
-    "time": "16:00",
-    "booking_id": "02692ca0-78d7-4422-b0a9-a6f73bda00f5"
+    "time": "16:00"
+  },
+  {
+    "date": "2026-11-08",
+    "city": "Conchal, SP",
+    "venue": "Evento Privado",
+    "time": "16:00h",
+    "notes": "Fábrica buriti fechado por 2500,00\nA dupla + baixo + bateria + sanfona "
   }
 ]
