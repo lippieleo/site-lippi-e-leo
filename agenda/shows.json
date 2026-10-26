@@ -1,11 +1,5 @@
 [
   {
-    "date": "2026-10-22",
-    "city": "Conchal, SP",
-    "venue": "Container",
-    "time": "20:00 horas"
-  },
-  {
     "date": "2026-10-23",
     "city": "Santa Rosa de Viterbo - SP",
     "venue": "Sexta Sertaneja — Quintal do Patrão",
@@ -22,8 +16,7 @@
     "date": "2026-10-29",
     "city": "Conchal, SP",
     "venue": "Container",
-    "time": "19:00",
-    "booking_id": "ee3dc3da-f86c-4821-ace3-9da53b525e28"
+    "time": "19:00"
   },
   {
     "date": "2026-11-07",
