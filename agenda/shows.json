@@ -3,88 +3,102 @@
     "date": "2026-10-23",
     "city": "Santa Rosa de Viterbo - SP",
     "venue": "Sexta Sertaneja — Quintal do Patrão",
-    "time": "20h30"
+    "time": "20h30",
+    "finance_ref": "aglegacy-20261026-0001"
   },
   {
     "date": "2026-10-24",
     "city": "Casa Branca - SP",
     "venue": "Sábado Sertanejo — Buteco do Mandy",
     "time": "A partir das 20h",
-    "notes": "show Lippi e Léo"
+    "notes": "show Lippi e Léo",
+    "finance_ref": "aglegacy-20261026-0002"
   },
   {
     "date": "2026-10-29",
     "city": "Conchal, SP",
     "venue": "Container",
-    "time": "19:00"
+    "time": "19:00",
+    "finance_ref": "aglegacy-20261026-0003"
   },
   {
     "date": "2026-11-07",
     "city": "Monte Belo - MG",
     "venue": "Arena Beach Bar",
-    "time": "20h"
+    "time": "20h",
+    "finance_ref": "aglegacy-20261026-0004"
   },
   {
     "date": "2026-11-07",
     "city": "Mococa SP",
     "venue": "Evento Privado",
-    "time": "12:30h"
+    "time": "12:30h",
+    "finance_ref": "aglegacy-20261026-0005"
   },
   {
     "date": "2026-11-13",
     "city": "Jacuí, MG",
     "venue": "Evento Privado",
-    "time": "19:30h"
+    "time": "19:30h",
+    "finance_ref": "aglegacy-20261026-0006"
   },
   {
     "date": "2026-11-14",
     "city": "Casa Branca, SP",
     "venue": "Evento Privado ",
     "time": "16:00 h",
-    "notes": "Fechado por 1400,00\nDeise  19 99337-4785"
+    "notes": "Fechado por 1400,00\nDeise  19 99337-4785",
+    "finance_ref": "aglegacy-20261026-0007"
   },
   {
     "date": "2026-11-15",
     "city": "Casa Branca, SP",
     "venue": "Evento Privado ",
-    "time": "16:00h"
+    "time": "16:00h",
+    "finance_ref": "aglegacy-20261026-0008"
   },
   {
     "date": "2026-11-21",
     "city": "Lagoa Branca, SP",
     "venue": "Villa",
     "time": "15:00h",
-    "notes": "Show em casa branca fechado por 2000,00"
+    "notes": "Show em casa branca fechado por 2000,00",
+    "finance_ref": "aglegacy-20261026-0009"
   },
   {
     "date": "2026-11-28",
     "city": "Mococa SP",
     "venue": "Evento Privado",
     "time": "20:30",
-    "notes": "Fechado com veio primo \nValor 1450,00"
+    "notes": "Fechado com veio primo \nValor 1450,00",
+    "finance_ref": "aglegacy-20261026-0010"
   },
   {
     "date": "2026-11-29",
     "city": "Divinolândia, SP",
     "venue": "Pesqueiro Recanto dos Lagos",
-    "time": "14:30h"
+    "time": "14:30h",
+    "finance_ref": "aglegacy-20261026-0011"
   },
   {
     "date": "2026-12-12",
     "city": "Conchal, SP",
     "venue": "EVENTO PRIVADO",
-    "time": "14:00 horas"
+    "time": "14:00 horas",
+    "finance_ref": "aglegacy-20261026-0012"
   },
   {
     "date": "2027-02-20",
     "city": "Casa Branca, SP",
     "venue": "Evento Privado",
-    "time": "16:00"
+    "time": "16:00",
+    "finance_ref": "aglegacy-20261026-0013"
   },
   {
     "date": "2027-07-10",
     "city": "Mococa, SP",
     "venue": "Vale imperial Gold",
-    "notes": "Casamento Mariana e Felipi Fechado por 3500,00 com a cerimonialista Carol eventos \nBanda completa "
+    "notes": "Casamento Mariana e Felipi Fechado por 3500,00 com a cerimonialista Carol eventos \nBanda completa ",
+    "finance_ref": "aglegacy-20261026-0014"
   }
 ]
