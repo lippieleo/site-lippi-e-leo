@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "title": "Cigana",
+    "artist": "Lippi & Léo",
+    "file": "/cigana.mp3"
+  },
+  {
+    "title": "Medley Hoje Não É Nosso Dia",
+    "artist": "Lippi & Léo",
+    "file": "/medley-hoje-nao-e-nosso-dia.mp3"
+  }
+]
