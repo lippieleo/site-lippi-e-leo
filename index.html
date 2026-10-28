@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   const response=await fetch('/settings/music.json',{cache:'no-store'});
   if(!response.ok)throw Error('HTTP');
   const data=await response.json();
-  const extra=(Array.isArray(data)?data:[]).filter(x=>x&&typeof x.title==='string'&&urlOf(x.file)).map(x=>({title:x.title,artist:x.artist,url:urlOf(x.file)}));
+  const extra=(await Promise.all((Array.isArray(data)?data:[]).filter(x=>x&&typeof x.title==='string'&&urlOf(x.file)).map(async x=>{const url=urlOf(x.file);try{const check=await fetch(url,{method:'HEAD',cache:'no-store'});return check.ok?{title:x.title,artist:x.artist,url}:null}catch{return null}}))).filter(Boolean);
   tracks=[tracks[0],...extra.filter(x=>x.url!==tracks[0].url)];
   showTracks();
   status.textContent=tracks.length>1?'Playlist pronta':'Coração Quebrado';
