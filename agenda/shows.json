@@ -13,6 +13,13 @@
     "notes": "show Lippi e Léo"
   },
   {
+    "date": "2026-10-29",
+    "city": "Conchal, SP",
+    "venue": "Container",
+    "time": "19:00",
+    "booking_id": "ee3dc3da-f86c-4821-ace3-9da53b525e28"
+  },
+  {
     "date": "2026-10-30",
     "city": "Conchal, SP",
     "venue": "Container",
@@ -44,10 +51,24 @@
     "notes": "Fechado por 1400,00\nDeise  19 99337-4785"
   },
   {
+    "date": "2026-11-14",
+    "city": "Mococa ",
+    "venue": "Aura",
+    "time": "23:00",
+    "notes": "Fechado por 1200,00 bateria baixo e vs"
+  },
+  {
     "date": "2026-11-15",
     "city": "Casa Branca, SP",
     "venue": "Evento Privado ",
     "time": "16:00h"
+  },
+  {
+    "date": "2026-11-19",
+    "city": "Casa Branca",
+    "venue": "Buteco do Mandy",
+    "time": "20:00",
+    "booking_id": "9f52cf32-40df-48e1-96aa-69d00476dcbf"
   },
   {
     "date": "2026-11-21",
@@ -76,6 +97,13 @@
     "time": "14:00 horas"
   },
   {
+    "date": "2026-12-19",
+    "city": "São José do Rio Pardo",
+    "venue": "Illuminati Bar Balada",
+    "time": "21:00h",
+    "notes": "Fazendo portaria com Willian e Rafael "
+  },
+  {
     "date": "2027-02-20",
     "city": "Casa Branca, SP",
     "venue": "Evento Privado",
@@ -93,19 +121,5 @@
     "venue": "Evento Privado (Casamento Sofia e Eduardo)",
     "time": "19:00",
     "notes": "Casamento Sofia e Eduardo fechado pelo valor de 4000,00\nWhats +55 19 98985-5335"
-  },
-  {
-    "date": "2026-11-14",
-    "city": "Mococa ",
-    "venue": "Aura",
-    "time": "23:00",
-    "notes": "Fechado por 1200,00 bateria baixo e vs"
-  },
-  {
-    "date": "2026-12-19",
-    "city": "São José do Rio Pardo",
-    "venue": "Illuminati Bar Balada",
-    "time": "21:00h",
-    "notes": "Fazendo portaria com Willian e Rafael "
   }
 ]
