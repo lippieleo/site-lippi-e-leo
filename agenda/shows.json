@@ -13,13 +13,6 @@
     "notes": "show Lippi e Léo"
   },
   {
-    "date": "2026-10-29",
-    "city": "Conchal, SP",
-    "venue": "Container",
-    "time": "19:00",
-    "booking_id": "ee3dc3da-f86c-4821-ace3-9da53b525e28"
-  },
-  {
     "date": "2026-10-30",
     "city": "Conchal, SP",
     "venue": "Container",
@@ -67,8 +60,7 @@
     "date": "2026-11-19",
     "city": "Casa Branca",
     "venue": "Buteco do Mandy",
-    "time": "20:00",
-    "booking_id": "9f52cf32-40df-48e1-96aa-69d00476dcbf"
+    "time": "20:00"
   },
   {
     "date": "2026-11-21",
