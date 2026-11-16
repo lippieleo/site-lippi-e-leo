@@ -13,6 +13,13 @@
     "notes": "show Lippi e Léo"
   },
   {
+    "date": "2026-10-29",
+    "city": "Conchal, SP",
+    "venue": "Container",
+    "time": "19:00",
+    "booking_id": "ee3dc3da-f86c-4821-ace3-9da53b525e28"
+  },
+  {
     "date": "2026-10-30",
     "city": "Conchal, SP",
     "venue": "Container",
@@ -94,6 +101,13 @@
     "venue": "Illuminati Bar Balada",
     "time": "21:00h",
     "notes": "Fazendo portaria com Willian e Rafael "
+  },
+  {
+    "date": "2027-01-16",
+    "city": "Casa Branca, SP",
+    "venue": "Salão Mundo Mágico",
+    "time": "15:00",
+    "booking_id": "32bbbd4b-0511-497f-9e7e-3b12782e2970"
   },
   {
     "date": "2027-02-20",
