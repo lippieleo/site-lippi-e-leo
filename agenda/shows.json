@@ -16,8 +16,7 @@
     "date": "2026-10-29",
     "city": "Conchal, SP",
     "venue": "Container",
-    "time": "19:00",
-    "booking_id": "ee3dc3da-f86c-4821-ace3-9da53b525e28"
+    "time": "19:00"
   },
   {
     "date": "2026-10-30",
@@ -99,8 +98,7 @@
     "date": "2026-12-12",
     "city": "Mococa SP",
     "venue": "Evento Privado",
-    "time": "15:00",
-    "booking_id": "fed4e8c3-411f-4a86-a368-31c3fafe17aa"
+    "time": "15:00"
   },
   {
     "date": "2026-12-19",
@@ -113,8 +111,7 @@
     "date": "2027-01-16",
     "city": "Casa Branca, SP",
     "venue": "Salão Mundo Mágico",
-    "time": "15:00",
-    "booking_id": "32bbbd4b-0511-497f-9e7e-3b12782e2970"
+    "time": "15:00"
   },
   {
     "date": "2027-02-20",
@@ -134,5 +131,12 @@
     "venue": "Evento Privado (Casamento Sofia e Eduardo)",
     "time": "19:00",
     "notes": "Casamento Sofia e Eduardo fechado pelo valor de 4000,00\nWhats +55 19 98985-5335"
+  },
+  {
+    "date": "2027-01-16",
+    "city": "Mococa ",
+    "venue": "Evento Privado ",
+    "time": "21:00 Horas ",
+    "notes": "Vinicius bolinha \n1100,00"
   }
 ]
