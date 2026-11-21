@@ -105,8 +105,7 @@
     "date": "2026-12-20",
     "city": "Mococa",
     "venue": "Chácara",
-    "time": "13:00",
-    "booking_id": "024c10d0-d95e-489b-b491-bdda30a10058"
+    "time": "13:00"
   },
   {
     "date": "2027-01-16",
@@ -139,5 +138,11 @@
     "venue": "Evento Privado (Casamento Sofia e Eduardo)",
     "time": "19:00",
     "notes": "Casamento Sofia e Eduardo fechado pelo valor de 4000,00\nWhats +55 19 98985-5335"
+  },
+  {
+    "date": "2027-05-08",
+    "city": "Jacuí,MG",
+    "venue": "Chácara do Renatão ",
+    "time": "15:00"
   }
 ]
