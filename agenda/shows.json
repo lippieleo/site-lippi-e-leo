@@ -108,10 +108,24 @@
     "notes": "Fazendo portaria com Willian e Rafael "
   },
   {
+    "date": "2026-12-20",
+    "city": "Mococa",
+    "venue": "Chácara",
+    "time": "13:00",
+    "booking_id": "024c10d0-d95e-489b-b491-bdda30a10058"
+  },
+  {
     "date": "2027-01-16",
     "city": "Casa Branca, SP",
     "venue": "Salão Mundo Mágico",
     "time": "15:00"
+  },
+  {
+    "date": "2027-01-16",
+    "city": "Mococa ",
+    "venue": "Evento Privado ",
+    "time": "21:00 Horas ",
+    "notes": "Vinicius bolinha \n1100,00"
   },
   {
     "date": "2027-02-20",
@@ -131,12 +145,5 @@
     "venue": "Evento Privado (Casamento Sofia e Eduardo)",
     "time": "19:00",
     "notes": "Casamento Sofia e Eduardo fechado pelo valor de 4000,00\nWhats +55 19 98985-5335"
-  },
-  {
-    "date": "2027-01-16",
-    "city": "Mococa ",
-    "venue": "Evento Privado ",
-    "time": "21:00 Horas ",
-    "notes": "Vinicius bolinha \n1100,00"
   }
 ]
