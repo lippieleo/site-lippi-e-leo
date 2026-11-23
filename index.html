@@ -319,6 +319,32 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
  const list=document.getElementById('showList');
  if(!list)return;
  const make=(tag,cls,value)=>{const el=document.createElement(tag);el.className=cls;if(value!==undefined)el.textContent=value;return el};
+ // Navegação entre meses, preservando os cards e o filtro mensal da agenda oficial.
+ let selectedMonth='';
+ const monthNav=make('nav','ll-agenda-month-nav');
+ monthNav.setAttribute('aria-label','Escolha o mês da agenda');
+ const prevMonth=make('button','ll-agenda-month-button','‹');
+ prevMonth.type='button';prevMonth.setAttribute('aria-label','Mês anterior');
+ const monthLabel=make('span','ll-agenda-month-label','');
+ const nextMonth=make('button','ll-agenda-month-button','›');
+ nextMonth.type='button';nextMonth.setAttribute('aria-label','Próximo mês');
+ const currentMonthButton=make('button','ll-agenda-month-today','Mês atual');
+ currentMonthButton.type='button';
+ monthNav.append(prevMonth,monthLabel,nextMonth,currentMonthButton);
+ list.before(monthNav);
+ const monthStyles=document.createElement('style');
+ monthStyles.textContent='.ll-agenda-month-nav{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;margin:0 0 20px}.ll-agenda-month-button,.ll-agenda-month-today{border:1px solid #a72b3d;border-radius:8px;background:rgba(30,12,19,.9);color:white;font:inherit;cursor:pointer;padding:8px 14px}.ll-agenda-month-button{font-size:24px;line-height:1;min-width:42px}.ll-agenda-month-label{min-width:150px;text-align:center;font-weight:700;text-transform:capitalize;color:#fff}.ll-agenda-month-button:focus-visible,.ll-agenda-month-today:focus-visible{outline:2px solid #fff;outline-offset:2px}';
+ document.head.append(monthStyles);
+ function changeMonth(step){
+  const [year,month]=selectedMonth.split('-').map(Number);
+  if(!year||!month)return;
+  const date=new Date(year,month-1+step,1);
+  selectedMonth=date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0');
+  render();
+ }
+ prevMonth.addEventListener('click',()=>changeMonth(-1));
+ nextMonth.addEventListener('click',()=>changeMonth(1));
+ currentMonthButton.addEventListener('click',()=>{selectedMonth='';render()});
  const formatDate=date=>{const [year,month,day]=date.split('-');return day+'/'+month+'/'+year};
  const valid=x=>x&&typeof x==='object'&&/^\d{4}-\d{2}-\d{2}$/.test(x.date||'')&&typeof x.city==='string'&&typeof x.venue==='string';
  // O cadastro agora e publicado pelo repositorio; nao pelo armazenamento local do visitante.
@@ -355,9 +381,12 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     const datePart=key=>parts.find(p=>p.type===key).value;
     const todayKey=datePart('year')+'-'+datePart('month')+'-'+datePart('day');
     const currentMonth=todayKey.slice(0,7);
+    if(!selectedMonth)selectedMonth=currentMonth;
+    const [year,month]=selectedMonth.split('-').map(Number);
+    monthLabel.textContent=new Intl.DateTimeFormat('pt-BR',{month:'long',year:'numeric'}).format(new Date(year,month-1,1));
     list.replaceChildren();
     // Exibir todos os shows do mes corrente, inclusive datas ja passadas; trocar automaticamente na virada do mes.
-    const selected=shows.filter(x=>x.date.slice(0,7)===currentMonth);
+    const selected=shows.filter(x=>x.date.slice(0,7)===selectedMonth);
     if(!selected.length){list.append(make('div','show-empty','Nenhum próximo show anunciado.'));return}
     selected.forEach(x=>{
     const card=make('article','show-card');
