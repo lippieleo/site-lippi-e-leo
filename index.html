@@ -357,9 +357,9 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     const todayKey=datePart('year')+'-'+datePart('month')+'-'+datePart('day');
     const currentMonth=todayKey.slice(0,7);
     list.replaceChildren();
-    // Exibir todos os shows do mes atual em diante, sem ocultar eventos futuros.
-    const selected=shows.filter(x=>x.date.slice(0,7)>=currentMonth);
-    if(!selected.length){list.append(make('div','show-empty','Nenhum próximo show anunciado.'));return}
+    // Exibir somente os shows do mês e ano atuais, no fuso de São Paulo.
+    const selected=shows.filter(x=>x.date.slice(0,7)===currentMonth);
+    if(!selected.length){list.append(make('div','show-empty','Nenhum show anunciado para este mês.'));return}
     selected.forEach(x=>{
     const card=make('article','show-card');
     card.append(make('div','show-date',formatDate(x.date)),make('div','show-city',x.city),make('div','show-venue',x.venue));
