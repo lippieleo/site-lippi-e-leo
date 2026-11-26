@@ -9,7 +9,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:show-20261023-0@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261023T020000
 DTEND;TZID=America/Sao_Paulo:20261023T040000
 SUMMARY:Lippi & Léo - Sexta Sertaneja — Quintal do Patrão
@@ -20,7 +20,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261024-1@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261024T020000
 DTEND;TZID=America/Sao_Paulo:20261024T040000
 SUMMARY:Lippi & Léo - Sábado Sertanejo — Buteco do Mandy
@@ -31,7 +31,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261029-2@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261029T190000
 DTEND;TZID=America/Sao_Paulo:20261029T210000
 SUMMARY:Lippi & Léo - Container
@@ -42,7 +42,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261030-3@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261030T190000
 DTEND;TZID=America/Sao_Paulo:20261030T210000
 SUMMARY:Lippi & Léo - Container
@@ -53,7 +53,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261107-4@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261107T020000
 DTEND;TZID=America/Sao_Paulo:20261107T040000
 SUMMARY:Lippi & Léo - Arena Beach Bar
@@ -64,7 +64,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261107-5@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261107T123000
 DTEND;TZID=America/Sao_Paulo:20261107T143000
 SUMMARY:Lippi & Léo - Evento Privado
@@ -75,7 +75,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261113-6@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261113T193000
 DTEND;TZID=America/Sao_Paulo:20261113T213000
 SUMMARY:Lippi & Léo - Evento Privado
@@ -86,7 +86,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261114-7@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261114T160000
 DTEND;TZID=America/Sao_Paulo:20261114T180000
 SUMMARY:Lippi & Léo - Evento Privado 
@@ -97,7 +97,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261114-8@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261114T020000
 DTEND;TZID=America/Sao_Paulo:20261114T040000
 SUMMARY:Lippi & Léo - Aura
@@ -108,7 +108,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261115-9@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261115T160000
 DTEND;TZID=America/Sao_Paulo:20261115T180000
 SUMMARY:Lippi & Léo - Evento Privado 
@@ -119,7 +119,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261119-10@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261119T020000
 DTEND;TZID=America/Sao_Paulo:20261119T040000
 SUMMARY:Lippi & Léo - Buteco do Mandy
@@ -130,7 +130,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261121-11@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261121T150000
 DTEND;TZID=America/Sao_Paulo:20261121T170000
 SUMMARY:Lippi & Léo - Villa
@@ -141,7 +141,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261128-12@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261128T020000
 DTEND;TZID=America/Sao_Paulo:20261128T040000
 SUMMARY:Lippi & Léo - Evento Privado
@@ -152,7 +152,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261129-13@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261129T143000
 DTEND;TZID=America/Sao_Paulo:20261129T163000
 SUMMARY:Lippi & Léo - Pesqueiro Recanto dos Lagos
@@ -163,7 +163,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261205-14@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261205T160000
 DTEND;TZID=America/Sao_Paulo:20261205T180000
 SUMMARY:Lippi & Léo - Evento Particular 
@@ -174,7 +174,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261211-15@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261211T183000
 DTEND;TZID=America/Sao_Paulo:20261211T203000
 SUMMARY:Lippi & Léo - EVENTO PRIVADO
@@ -185,7 +185,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261219-16@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261219T020000
 DTEND;TZID=America/Sao_Paulo:20261219T040000
 SUMMARY:Lippi & Léo - Illuminati Bar Balada
@@ -196,7 +196,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261220-17@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261220T130000
 DTEND;TZID=America/Sao_Paulo:20261220T150000
 SUMMARY:Lippi & Léo - Chácara
@@ -207,7 +207,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261220-18@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261220T180000
 DTEND;TZID=America/Sao_Paulo:20261220T200000
 SUMMARY:Lippi & Léo - Barmazem
@@ -218,7 +218,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20270116-19@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20270116T150000
 DTEND;TZID=America/Sao_Paulo:20270116T170000
 SUMMARY:Lippi & Léo - Salão Mundo Mágico
@@ -229,7 +229,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20270116-20@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20270116T020000
 DTEND;TZID=America/Sao_Paulo:20270116T040000
 SUMMARY:Lippi & Léo - Evento Privado 
@@ -240,7 +240,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20270130-21@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20270130T190000
 DTEND;TZID=America/Sao_Paulo:20270130T210000
 SUMMARY:Lippi & Léo - Evento Privado
@@ -251,7 +251,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20270220-22@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20270220T160000
 DTEND;TZID=America/Sao_Paulo:20270220T180000
 SUMMARY:Lippi & Léo - Evento Privado
@@ -262,7 +262,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20270508-23@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20270508T150000
 DTEND;TZID=America/Sao_Paulo:20270508T170000
 SUMMARY:Lippi & Léo - Gravação do DVD Lippi e Léo Chácara do Renatã
@@ -274,7 +274,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20270710-24@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;VALUE=DATE:20270710
 DTEND;VALUE=DATE:20270711
 SUMMARY:Lippi & Léo - Vale imperial Gold
@@ -286,7 +286,7 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20280909-25@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20280909T190000
 DTEND;TZID=America/Sao_Paulo:20280909T210000
 SUMMARY:Lippi & Léo - Evento Privado (Casamento Sofia e Eduardo)
@@ -298,13 +298,24 @@ URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 BEGIN:VEVENT
 UID:show-20261212-26@lippieleo.com.br
-DTSTAMP:20261126T163535Z
+DTSTAMP:20261126T164211Z
 DTSTART;TZID=America/Sao_Paulo:20261212T190000
 DTEND;TZID=America/Sao_Paulo:20261212T210000
 SUMMARY:Lippi & Léo - Container 
 LOCATION:Conchal\,SP
 DESCRIPTION:Horário informado: 19:00 Horas  |  | Veja: https://www.lippi
  eleo.com.br/#agenda
+URL:https://www.lippieleo.com.br/#agenda
+END:VEVENT
+BEGIN:VEVENT
+UID:show-20261230-27@lippieleo.com.br
+DTSTAMP:20261126T164211Z
+DTSTART;TZID=America/Sao_Paulo:20261230T190000
+DTEND;TZID=America/Sao_Paulo:20261230T210000
+SUMMARY:Lippi & Léo - Container
+LOCATION:Conchal\, SP
+DESCRIPTION:Horário informado: 19:00 |  | Veja: https://www.lippieleo.co
+ m.br/#agenda
 URL:https://www.lippieleo.com.br/#agenda
 END:VEVENT
 END:VCALENDAR
