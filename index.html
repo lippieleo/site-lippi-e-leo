@@ -335,10 +335,10 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
   async function syncApproved(){
    const id=++requestId;
    try{
-    const response=await fetch('https://zcfudytghjsosnpkmgzv.supabase.co/functions/v1/pre-reservas?action=agenda&v='+Date.now(),{cache:'no-store'});
+    const response=await fetch('https://zcfudytghjsosnpkmgzv.supabase.co/rest/v1/agenda_publica?select=date,city,venue,time,tickets&order=date.asc,time.asc&limit=1000',{cache:'no-store',headers:{apikey:'sb_publishable_2ALYNwAtD2DtRHN66Q055w__tpP-oid'}});
     if(!response.ok)throw Error('HTTP '+response.status);
-    const payload=await response.json();
-    if(payload.source!=='supabase'||!Array.isArray(payload.shows)||!payload.shows.every(valid))throw Error('Agenda inválida');
+    const payload={shows:await response.json()};
+    if(!Array.isArray(payload.shows)||!payload.shows.every(valid))throw Error('Agenda inválida');
     if(id!==requestId)return;
     shows=payload.shows.sort((a,b)=>a.date.localeCompare(b.date));render();
    }catch(err){
