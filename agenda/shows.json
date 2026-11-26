@@ -169,5 +169,12 @@
     "city": "Conchal,SP",
     "venue": "Container ",
     "time": "19:00 Horas "
+  },
+  {
+    "date": "2026-12-30",
+    "city": "Conchal, SP",
+    "venue": "Container",
+    "time": "19:00",
+    "booking_id": "b26b98f1-9872-4224-a9e0-39e1ca5d95f9"
   }
 ]
