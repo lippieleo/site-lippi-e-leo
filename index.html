@@ -330,8 +330,12 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
  if(oldToggle)oldToggle.hidden=true;
  if(oldPanel)oldPanel.hidden=true;
  async function load(){
-  let shows=null;
+  const cacheKey='ll_site_agenda_v2';
+  let shows=[{"date":"2026-10-23","city":"Santa Rosa de Viterbo - SP","venue":"Sexta Sertaneja — Quintal do Patrão","time":"20h30","tickets":null},{"date":"2026-10-24","city":"Casa Branca - SP","venue":"Sábado Sertanejo — Buteco do Mandy","time":"A partir das 20h","tickets":null},{"date":"2026-10-29","city":"Conchal, SP","venue":"Container","time":"19:00","tickets":null},{"date":"2026-10-30","city":"Conchal, SP","venue":"Container","time":"19:00","tickets":null},{"date":"2026-11-07","city":"Mococa SP","venue":"Evento Privado","time":"12:30h","tickets":null},{"date":"2026-11-07","city":"Monte Belo - MG","venue":"Arena Beach Bar","time":"20h","tickets":null},{"date":"2026-11-13","city":"Jacuí, MG","venue":"Evento Privado","time":"19:30h","tickets":null},{"date":"2026-11-14","city":"Casa Branca, SP","venue":"Evento Privado ","time":"16:00 h","tickets":null},{"date":"2026-11-14","city":"Mococa ","venue":"Aura","time":"23:00","tickets":null},{"date":"2026-11-15","city":"Casa Branca, SP","venue":"Evento Privado ","time":"16:00h","tickets":null},{"date":"2026-11-19","city":"Casa Branca","venue":"Buteco do Mandy","time":"20:00","tickets":null},{"date":"2026-11-21","city":"Lagoa Branca, SP","venue":"Villa","time":"15:00h","tickets":null},{"date":"2026-11-28","city":"Mococa SP","venue":"Evento Privado","time":"20:30","tickets":null},{"date":"2026-11-29","city":"Divinolândia, SP","venue":"Pesqueiro Recanto dos Lagos","time":"14:30h","tickets":null},{"date":"2026-12-05","city":"Casa Branca, SP","venue":"Evento Particular ","time":"16:00 Horas","tickets":null},{"date":"2026-12-11","city":"Conchal, SP","venue":"EVENTO PRIVADO","time":"18:30 horas","tickets":null},{"date":"2026-12-12","city":"Conchal,SP","venue":"Container ","time":"19:00 Horas ","tickets":null},{"date":"2026-12-19","city":"São José do Rio Pardo","venue":"Illuminati Bar Balada","time":"21:00h","tickets":null},{"date":"2026-12-20","city":"Mococa","venue":"Chácara","time":"13:00","tickets":null},{"date":"2026-12-20","city":"Mococa SP","venue":"Barmazem","time":"18:00","tickets":null},{"date":"2026-12-30","city":"Conchal, SP","venue":"Container","time":"19:00","tickets":null},{"date":"2027-01-16","city":"Casa Branca, SP","venue":"Salão Mundo Mágico","time":"15:00","tickets":null},{"date":"2027-01-16","city":"Mococa ","venue":"Evento Privado ","time":"21:00 Horas ","tickets":null},{"date":"2027-01-30","city":"Alpinópolis","venue":"Evento Privado","time":"19:00","tickets":null},{"date":"2027-02-20","city":"Casa Branca, SP","venue":"Evento Privado","time":"16:00","tickets":null},{"date":"2027-05-08","city":"Jacuí,MG","venue":"Gravação do DVD Lippi e Léo Chácara do Renatão ","time":"15:00","tickets":null},{"date":"2027-07-10","city":"Mococa, SP","venue":"Vale imperial Gold","time":"","tickets":null},{"date":"2028-09-09","city":"Conchal ","venue":"Evento Privado (Casamento Sofia e Eduardo)","time":"19:00","tickets":null}];
   let requestId=0;
+  let confirmed=false;
+  try{const saved=JSON.parse(localStorage.getItem(cacheKey)||'null');if(Array.isArray(saved)&&saved.every(valid))shows=saved}catch(e){}
+
   async function syncApproved(){
    const id=++requestId;
    try{
@@ -340,10 +344,10 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     const payload={shows:await response.json()};
     if(!Array.isArray(payload.shows)||!payload.shows.every(valid))throw Error('Agenda inválida');
     if(id!==requestId)return;
-    shows=payload.shows.sort((a,b)=>a.date.localeCompare(b.date));render();
+    shows=payload.shows.sort((a,b)=>a.date.localeCompare(b.date));confirmed=true;try{localStorage.setItem(cacheKey,JSON.stringify(shows))}catch(e){}render();
    }catch(err){
     console.warn('Agenda temporariamente indisponível',err);
-    if(shows===null)list.replaceChildren(make('div','show-empty','Agenda temporariamente indisponível. Tente novamente mais tarde.'));
+    confirmed=false;render();
    }
   }
    function render(){
@@ -353,6 +357,7 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     const todayKey=datePart('year')+'-'+datePart('month')+'-'+datePart('day');
     const currentMonth=todayKey.slice(0,7);
     list.replaceChildren();
+    if(!confirmed)list.append(make('div','agenda-note','Última agenda disponível. Confirme as datas com a produção.'));
     // Exibir somente os shows do mês e ano atuais, no fuso de São Paulo.
     const selected=shows.filter(x=>x.date.slice(0,7)===currentMonth);
     if(!selected.length){list.append(make('div','show-empty','Nenhum show anunciado para este mês.'));return}
@@ -367,7 +372,7 @@ Mensagem: ${d.get('mensagem')||'Não informada'}`;window.open('https://wa.me/551
     list.append(card);
     });
    }
-   syncApproved();
+   render();syncApproved();
    setInterval(()=>{if(!document.hidden)syncApproved()},30000);
    setInterval(()=>{if(shows!==null)render()},60000);
    document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncApproved()});
