@@ -118,8 +118,7 @@
     "date": "2026-12-20",
     "city": "Mococa SP",
     "venue": "Barmazem",
-    "time": "18:00",
-    "booking_id": "a3d84452-a402-4247-b906-da2ca5ac66a8"
+    "time": "18:00"
   },
   {
     "date": "2027-01-16",
@@ -138,8 +137,7 @@
     "date": "2027-01-30",
     "city": "Alpinópolis",
     "venue": "Evento Privado",
-    "time": "19:00",
-    "booking_id": "1ce7465d-f7b6-4783-99f6-e568c6fa2ac8"
+    "time": "19:00"
   },
   {
     "date": "2027-02-20",
@@ -165,5 +163,11 @@
     "venue": "Evento Privado (Casamento Sofia e Eduardo)",
     "time": "19:00",
     "notes": "Casamento Sofia e Eduardo fechado pelo valor de 4000,00\nWhats +55 19 98985-5335"
+  },
+  {
+    "date": "2026-12-12",
+    "city": "Conchal,SP",
+    "venue": "Container ",
+    "time": "19:00 Horas "
   }
 ]
